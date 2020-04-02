@@ -1,9 +1,7 @@
-const express = require("express");
-const app = express();
-
-const massive = require("massive");
-
 require("dotenv").config();
+const express = require("express");
+const massive = require("massive");
+const app = express();
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
