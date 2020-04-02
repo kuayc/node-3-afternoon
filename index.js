@@ -1,10 +1,9 @@
 require("dotenv").config();
+
 const express = require("express");
 const massive = require("massive");
 const products_controller = require("./products_controller");
-
 const app = express();
-
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 massive({
@@ -16,6 +15,7 @@ massive({
   })
   .catch(err => console.log(err));
 
+//middleware
 app.use(express.json());
 
 app.post("/api/products", products_controller.create);
